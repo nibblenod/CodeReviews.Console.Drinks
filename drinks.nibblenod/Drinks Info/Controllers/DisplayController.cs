@@ -9,7 +9,7 @@ public class DisplayController
     {
         AnsiConsole.Markup(message);
     }
-    internal string selectFrom(IEnumerable<string> items, string title)
+    internal string SelectFrom(IEnumerable<string> items, string title)
     {
         string selection = AnsiConsole.Prompt(
             new SelectionPrompt<string>()

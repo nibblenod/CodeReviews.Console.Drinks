@@ -2,7 +2,7 @@
 using Drinks_Info.Models;
 
 DisplayController displayController = new DisplayController();
-using DrinksAPIController drinksApiController = new();
+using DrinksApiController drinksApiController = new();
 
 displayController.PrintMessage("Welcome! Press any key to continue to the Drinks Menu...");
 Console.ReadLine();
@@ -15,7 +15,7 @@ while (true)
     var categoryList = categories.ToList();
     categoryList.Insert(0, "<Exit>");
     
-    string category = displayController.selectFrom(categoryList, "Select a category of drinks...");
+    string category = displayController.SelectFrom(categoryList, "Select a category of drinks...");
 
     if (category == "<Exit>")
     {
@@ -28,7 +28,7 @@ while (true)
         IEnumerable<string> drinks = await drinksApiController.GetDrinksFromCategory(category);
         var drinksList = drinks.ToList();
         drinksList.Insert(0, "<Back>");
-        string drink = displayController.selectFrom(drinksList, "Select a drink...");
+        string drink = displayController.SelectFrom(drinksList, "Select a drink...");
 
         if (drink == "<Back>")
         {

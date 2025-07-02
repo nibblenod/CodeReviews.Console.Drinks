@@ -3,10 +3,10 @@ using System.Web;
 using Drinks_Info.Models;
 namespace Drinks_Info;
 
-public class DrinksAPIController : IDisposable
+public class DrinksApiController : IDisposable
 {
     private static readonly HttpClient _client;
-    static DrinksAPIController()
+    static DrinksApiController()
     {
         _client = new HttpClient();
         _client.BaseAddress = new Uri("https://www.thecocktaildb.com");
